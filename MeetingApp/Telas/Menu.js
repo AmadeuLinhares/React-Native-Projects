@@ -64,10 +64,17 @@ class HomeScreen extends React.Component {
 }
 
 class SettingsScreen extends React.Component {
+  _signOutAsync = async () => {
+    
+    this.props.navigation.navigate('Auth');
+  };
+
   render() {
     return (
-      <LinearGradient start={{x: 0, y: 0}} end={{x: 0.5, y: 0.5}} colors={['#9EFBD3', '#57E9F2', '#45D4FB']} style={MenuStyle.gradientView}>
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+
+        <Button title="sair" onPress={this._signOutAsync} />
 
           <Text style={{fontSize: 55, color: 'white'}} >Configurações</Text>
 
